@@ -68,20 +68,5 @@ result_subset[1] <- NULL
 keyDriversHeat = pheatmap(mat = result_subset, color=colfunc(10),
                           cluster_cols = FALSE, cluster_rows = FALSE, 
                           show_rownames = TRUE, main = "Top 50 Significantly Enriched Pathways Using DEG For Psoriasis") 
-                          annotation_row = Top20_DEG_Psoriasis_Group, annotation_colors = aka3)
+                          #annotation_row = Top20_DEG_Psoriasis_Group, annotation_colors = aka3)
 
-
-test = matrix(rnorm(200), 20, 10)
-test[1:10, seq(1, 10, 2)] = test[1:10, seq(1, 10, 2)] + 3
-test[11:20, seq(2, 10, 2)] = test[11:20, seq(2, 10, 2)] + 2
-test[15:20, seq(2, 10, 2)] = test[15:20, seq(2, 10, 2)] + 4
-colnames(test) = paste("Test", 1:10, sep = "")
-rownames(test) = paste("Gene", 1:20, sep = "")
-
-# Draw heatmaps
-pheatmap(test)
-pheatmap(test, kmeans_k = 2)
-pheatmap(test, scale = "row", clustering_distance_rows = "correlation")
-pheatmap(test, color = colorRampPalette(c("navy", "white", "firebrick3"))(50))
-pheatmap(test, cluster_row = FALSE)
-pheatmap(test, legend = FALSE)
